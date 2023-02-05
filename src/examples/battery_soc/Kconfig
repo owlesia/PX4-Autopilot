@@ -1,0 +1,5 @@
+menuconfig EXAMPLES_BATTERY_SOC
+	bool "battery_soc"
+	default n
+	---help---
+		Enable support for battery_soc
