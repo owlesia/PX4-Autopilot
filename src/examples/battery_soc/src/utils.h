@@ -1,10 +1,10 @@
 ﻿#pragma once
-#include <chrono>
+// #include <chrono>
 #include <cmath>
-#include <fstream>
-#include <functional>
-#include <tuple>
-#include <type_traits>
+#include <uClibc++/fstream>
+#include <uClibc++/functional>
+// #include <tuple>
+#include <uClibc++/type_traits>
 #include <uClibc++/vector>
 
 #define stringify(x) #x
@@ -36,21 +36,21 @@
 
 namespace keras2cpp
 {
-template <typename Callable, typename... Args>
-auto timeit(Callable &&callable, Args &&... args)
-{
-	using namespace std::chrono;
-	auto begin = high_resolution_clock::now();
+// template <typename Callable, typename... Args>
+// auto timeit(Callable &&callable, Args &&... args)
+// {
+// 	using namespace std::chrono;
+// 	auto begin = high_resolution_clock::now();
 
-	if constexpr(std::is_void_v<std::invoke_result_t<Callable, Args...>>)
-		return std::make_tuple(
-			       (std::invoke(callable, args...), nullptr),
-			       duration<double>(high_resolution_clock::now() - begin).count());
-	else
-		return std::make_tuple(
-			       std::invoke(callable, args...),
-			       duration<double>(high_resolution_clock::now() - begin).count());
-}
+// 	if constexpr(std::is_void_v<std::invoke_result_t<Callable, Args...>>)
+// 		return std::make_tuple(
+// 			       (std::invoke(callable, args...), nullptr),
+// 			       duration<double>(high_resolution_clock::now() - begin).count());
+// 	else
+// 		return std::make_tuple(
+// 			       std::invoke(callable, args...),
+// 			       duration<double>(high_resolution_clock::now() - begin).count());
+// }
 class Stream
 {
 	std::ifstream stream_;
