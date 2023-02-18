@@ -10,7 +10,7 @@ config BOARD_HAS_PROBES
 
 config BOARD_USE_PROBES
 	bool "Enable the use the board provided FMU-CH1-5, CAP1-6 as PROBE_1-11"
-	default n
+	default y
 	depends on BOARD_HAS_PROBES
 
 	---help---

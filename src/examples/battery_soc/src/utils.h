@@ -5,7 +5,7 @@
 #include <functional>
 #include <tuple>
 #include <type_traits>
-#include <vector>
+#include <uClibc++/vector>
 
 #define stringify(x) #x
 

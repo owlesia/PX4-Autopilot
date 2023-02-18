@@ -31,47 +31,47 @@
 #
 ############################################################################
 
-cmake_minimum_required(VERSION 3.9)
+# cmake_minimum_required(VERSION 3.9)
 
-# common options
+# # common options
 
-enable_language(CXX)
+# enable_language(CXX)
 
-# set(CMAKE_C_COMPILER   "/usr/bin/clang")
-# set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+# # set(CMAKE_C_COMPILER   "/usr/bin/clang")
+# # set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 
-set(CMAKE_CXX_STANDARD 17)
+# set(CMAKE_CXX_STANDARD 17)
 
-if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
-      -W -Wall -Wextra -Wpedantic \
-      -Waggressive-loop-optimizations \
-      -Wcast-align -Wcast-qual \
-      -Wdouble-promotion -Wduplicated-branches -Wduplicated-cond \
-      -Wfloat-equal -Wformat=2 -Wformat-signedness -Wframe-larger-than=32768 \
-      -Wlogical-op \
-      -Wnull-dereference \
-      -Wodr -Wold-style-cast \
-      -Wshadow=local -Wshift-overflow=2 -Wstrict-aliasing=2 -Wsuggest-final-methods -Wsuggest-final-types -Wsync-nand \
-      -Wtrampolines \
-      -Wuseless-cast -Wno-unused-but-set-parameter \
-      -Wwrite-strings"
-      CACHE INTERNAL ""
-  )
-endif()
+# if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+#   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
+#       -W -Wall -Wextra -Wpedantic \
+#       -Waggressive-loop-optimizations \
+#       -Wcast-align -Wcast-qual \
+#       -Wdouble-promotion -Wduplicated-branches -Wduplicated-cond \
+#       -Wfloat-equal -Wformat=2 -Wformat-signedness -Wframe-larger-than=32768 \
+#       -Wlogical-op \
+#       -Wnull-dereference \
+#       -Wodr -Wold-style-cast \
+#       -Wshadow=local -Wshift-overflow=2 -Wstrict-aliasing=2 -Wsuggest-final-methods -Wsuggest-final-types -Wsync-nand \
+#       -Wtrampolines \
+#       -Wuseless-cast -Wno-unused-but-set-parameter \
+#       -Wwrite-strings"
+#       CACHE INTERNAL ""
+#   )
+# endif()
 
-if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
-      -Weverything \
-      -Wno-class-varargs -Wno-padded \
-      -Wc++17-compat \
-      -Wno-c++98-compat -Wno-c++98-compat-pedantic"
-      # -Wno-c++14-extensions
-      # -Wno-c++17-extensions
-      # -Wno-switch-enum -Wno-unused-macros
-      CACHE INTERNAL ""
-  )
-endif()
+# if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+#   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} \
+#       -Weverything \
+#       -Wno-class-varargs -Wno-padded \
+#       -Wc++17-compat \
+#       -Wno-c++98-compat -Wno-c++98-compat-pedantic"
+#       # -Wno-c++14-extensions
+#       # -Wno-c++17-extensions
+#       # -Wno-switch-enum -Wno-unused-macros
+#       CACHE INTERNAL ""
+#   )
+# endif()
 
 px4_add_module(
 	MODULE examples__battery_soc
